@@ -1,0 +1,511 @@
+<html>
+    <head>
+        <title>JS</title>
+        <script>
+            var myName="Varma";
+            var age=46;
+            var isStudent=false;
+
+            age="Fourty six";
+
+            if(typeof(age)=="number"){
+                age=age+10;
+            }
+
+            var x;
+
+            var myNumbers=["one","two","three"]
+
+            var student={
+                name:"Varma",
+                age:46,
+                isStudent:false,
+                "college name":"VNR",
+                1:"one"
+            }
+
+            var key="college name";
+
+            //conditional statements
+
+            var color="red";
+
+            if(color=="red"){
+                console.log("Color is red")
+            }
+            else if(color=="black"){
+                console.log("Color is black")
+            }
+            else if(color=="green"){
+                console.log("Color is green")
+            }
+            else
+            {
+                console.log("Color is unknown")
+            }
+
+            var a='';
+
+            if(a){
+
+            }
+            else
+            {
+
+            }
+
+
+
+            if((color=="red") || (color=="green")){
+
+            }
+            else
+            {
+
+            }
+
+            if((color=="red") && (color=="green")){
+
+            }
+            else
+            {
+                
+            }
+
+            if(!(color == "red")){
+
+            }
+
+            //This is single comment
+
+            /*
+                This 
+                is
+                multi line 
+                comment
+            */
+
+            (color=="red") ? console.log("Red") : console.log("Unknown")
+
+            switch(color){
+                case "red":
+                    console.log("red");
+                    break;
+                case "black":
+                    console.log("red");
+                    break;
+                default:
+                    console.log("unknow")
+            }
+
+            //Loops
+
+
+            //while
+
+            var a=0;
+
+            while(a<=10){
+                if(a>5) break;
+                console.log(a);
+                a++;
+            }
+        
+            //do .. while
+
+            var b=0;
+            do {
+                console.log(b);
+                b++;
+            }
+            while(b<=10)
+
+            //for
+
+            for(var c=0;c<=10;c++){
+                console.log(c)
+            }
+
+            //break
+            //continue
+
+            //Function
+
+            console.log(add(1,2));
+
+            //function declaration
+            function add(a,b){
+                return a+b;
+            }
+
+            //JavaScript Hoisting
+
+            //function expression
+            var sum=function(a,b){
+                return a+b;
+            }
+
+            console.log(sum(2,3));
+
+
+            
+
+
+            console.log("Welcome to JS Class")
+
+
+            //Arrays
+
+            var myNumbers=["one","two","three"];
+
+            myNumbers.push("four");
+            myNumbers.unshift("zero");
+            myNumbers.pop();
+            myNumbers.shift();
+
+            var myLetters=["a","b","c"];
+
+            myLetters.forEach(function(value,position){
+                console.log(value + " at " + position)
+            })
+
+            //every, some, filter, map, reduce
+
+            var movies=[
+                {
+                    id:1,
+                    title:"Bahubali",
+                    actor:"Prabhas",
+                    revenue:300,
+                    theaters:["A","B"]
+                },
+                {
+                    id:2,
+                    title:"Adhurs",
+                    actor:"NTR",
+                    revenue:50,
+                    theaters:["B","C"]
+                },
+                {
+                    id:3,
+                    title:"Kushi",
+                    actor:"Pavan",
+                    revenue:15,
+                    theaters:["C","D"]
+                }
+            ]
+
+            //1.is any movie crossed 50cr revennue?
+            var isAny50=movies.some(function(movie){
+                return movie.revenue>=50
+            })
+            console.log(isAny50);
+
+            //2. is all movies crossed 100cr revenue?
+            var isAll100=movies.every(function(movie){
+                return movie.revenue>=100
+            })
+            console.log(isAll100)
+
+            //3. I want list of movies released in theater B
+            var bMovies=movies.filter(function(movie){
+                return movie.theaters.indexOf("B")!=-1
+            })
+            console.log(bMovies);
+
+            //4. I want list of titles of all movies
+            // ["Bahubali","Adhurs","Kushi"]
+            var titles=movies.map(function(movie){
+                return movie.title;
+            })
+            console.log(titles)
+
+            //5. I want total revenue of all movies
+            var totalRevenue=movies.reduce(function(total,movie){
+                return total+movie.revenue;
+            },0)
+            console.log(totalRevenue)
+
+            //6. I want list of actors in to one string
+            // "Prabhas,NTR,Pavan"
+            var actors=movies.reduce(function(actors,movie){
+                if(actors=="") return movie.actor;
+                return actors + "," + movie.actor;
+            },'')
+            console.log(actors);
+
+            //7. I want an object containing movie title as key
+            // and movie actor as value
+            /*
+
+                {
+                    "Bahubali":"Prabhas",
+                    "Adhurs":"NTR",
+                    "Kushi":"Pavan"
+                }
+
+            */
+
+            var titleActors=movies.reduce(function(titleActors,movie){
+                titleActors[movie.title]=movie.actor;
+                return titleActors;
+            },{})
+
+            console.log(titleActors);
+            
+            // var user={}
+            // user.name="Varma";
+            // user["age"]=46;
+
+            // var key="college name"
+
+            // user[key]="JNTU"
+
+        //8. I want list of all theaters of all movies
+        // ["A","B","C","D"]
+
+        var theaters=movies.reduce(function(theaters,movie){
+            movie.theaters.forEach(function(theater){
+                if(theaters.indexOf(theater)==-1){
+                    theaters.push(theater)
+                }
+            })
+            return theaters;
+        },[])
+
+        console.log(theaters);
+
+
+        </script>
+        <script src="class.js"></script>
+
+        <!-- <script>
+            
+            var a=10;
+
+            if(true){
+                let a=20;
+                console.log(a)//? 20
+            }
+        
+            console.log(a);//? 10
+
+            const PI=3.1415
+
+            
+
+            var firstName="Varma"
+            var lastName="Bhupatiraju"
+            var address="MIG 27/1 Road #6"
+            var area="KPHB"
+            var city="Hyderabad"
+            var state="TS"
+            var postalCode=500072
+
+            var shippingLabel=firstName + " " + lastName + "\n"
+                            + address + "\n"
+                            + area + ", " + city + "\n"
+                            + state + " " + postalCode;
+
+            console.log(shippingLabel)
+
+var newShippingLabel=`
+${firstName} ${lastName}
+${address}
+${area}, ${city},
+${state} ${postalCode}`
+
+            // console.log(newShippingLabel)
+
+            // //Rest operator
+            // var add=function(...numbers){
+            //     return numbers.reduce(function(total,number){
+            //         return total+number;
+            //     })
+            // }
+
+            // var a=[1,2,3]
+            // var b=[4,5,6]
+
+            // //var c=a.concat(b);
+
+            // var c=[...a,...b]
+
+            // var a=[1,2,4,5,6];
+            // var [x,y,...z]=a;
+            // console.log(x,y);
+            // console.log(z)
+
+            // var student={
+            //     name:"Varma",
+            //     age:46
+            // }
+
+            // var { name, age } = student;
+
+            // console.log(name, age)
+
+            // var sum=(a,b)=>{
+            //     return a+b;
+            // }
+
+
+
+            
+            
+        </script> -->
+        <!-- <script>
+        
+            //Object Oriented Programming
+
+            //Class - model or blue print
+                // constructor
+                //Properties
+                //Methods
+
+            //Object - instance of class
+
+            //Encapsulation
+            //Inheritance
+            //Polymorphism
+            //Abstraction
+
+            //Constructor function
+            // function Person(name,age){
+            //     this.name=name;
+            //     this.age=age;
+            // }
+
+            // Person.prototype.showName=function(){
+            //     console.log(this.name)
+            // }
+
+            class Person{
+                constructor(name,age){
+                    this.name=name;
+                    this.age=age;
+                }
+
+                showName(){
+                    console.log(this.name)
+                }
+            }
+
+            var varma=new Person("Varma",46);
+            varma.showName();
+
+            // function Student(name,age,school){
+            //     this.name=name;
+            //     this.age=age;
+            //     this.school=school;
+            // }
+
+            // Student.prototype=new Person();
+
+            // Student.prototype.showSchool=function(){
+            //     console.log(this.school)
+            // }
+
+            class Student extends Person{
+                constructor(name,age,school){
+                    super(name,age);
+                    this.school=school;
+                }
+
+                showSchool(){
+                    console.log(this.school)
+                }
+            }
+
+            var ram=new Student("Ram",20,"JNTU");
+            ram.showSchool();
+            ram.showName();
+
+
+            var a=10;
+
+            if(true){
+                let a=20;
+                console.log(a); //20
+            }
+
+            console.log(a); //10
+
+            //const PI=3.1415;
+
+            // PI=2.15; //Error
+
+            const car={
+                brand:"Toyota",
+                model:"Camry"
+            }
+
+            car.year=2016; //OK
+
+            //car={} //Not OK
+
+            //same applies to arrays
+            const names=["a","b"]
+
+
+            
+
+            var fullName="Varma Bhpatiraju"
+            var address="MIG 27/1 Road #6"
+            var area="KPHB"
+            var city="Hyderabad"
+            var state="TS"
+            var postalCode=500072
+
+            var shippingLabel=fullName + "\n"
+                + address +"\n"
+                +area + "," +city + "\n"
+                + state + " " + postalCode;
+
+            console.log(shippingLabel)
+
+            var newShippingLabel=`
+            ${fullName}
+            ${address}
+            ${area}, ${city}
+            ${state} ${postalCode}
+            
+            `
+            
+            console.log(newShippingLabel)
+        
+
+            var total=function(...numbers){
+                return numbers.reduce(function(total,number){
+                    return total+number;
+                })
+            }
+
+            var a=[1,2,3]
+            var b=[4,5,6]
+
+            var c=[...a,...b]
+
+            var p=[4,1,6]
+
+            //  var four=p[0]
+            //  var six=p[1]
+
+             var [four,,six]=p;
+             console.log(four,six);
+
+             var {brand,model}=car;
+             console.log(brand, model)
+
+
+            var sum=a=>a+1;
+
+            
+            
+        </script> -->
+
+    </head>
+    <body>
+        <h1>Welcome to JS Class</h1>
+    </body>
+</html>
