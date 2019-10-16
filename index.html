@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>JS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
         <script>
             var myName="Varma";
             var age=46;
@@ -545,9 +547,15 @@ ${state} ${postalCode}`
             
         </script> -->
 
+        <style>
+            .red {
+                color:red;
+                font-size: 100;
+            }
+        </style>
     </head>
     <body>
-        <h1>Welcome to JS Class</h1>
+        <h1 id="title">Welcome to JS Class</h1>
         <h1>Hello</h1>
         <h1>Goodbye</h1>
         <ul>
@@ -555,15 +563,54 @@ ${state} ${postalCode}`
             <li class="bolded">List Item 2</li>
             <li class="bolded">List Item 3</li>
         </ul>
+        <p>Happy New Year</p>
+        <a href="http://www.yahoo.com">Yahoo!!!</a>
+        <button>Say Hello</button>
+
+        <div>Div 1</div>
+        <div class="highlight">Div 2</div>
+        <div id="third">Div 3</div>
+        <div class="highlight">Div 4</div>
     </body>
 </html>
 
 <script>
-    var h1=document.querySelector("h1"); //SELECT
-    h1.style.color="red"; //MANIPULATE
+//     var h1=document.querySelector("h1"); //SELECT
+//    // h1.style.color="red"; //MANIPULATE
 
-    var boldedLis=document.getElementsByClassName("bolded");
-    boldedLis[0].style.color="green";
-    boldedLis[1].style.color="green";
+//    //h1.textContent="Thank you for coming"
 
+//    //h1.classList.add("red");
+
+//    h1.addEventListener("mouseover",function(){
+//        h1.textContent="Thank you for coming"
+//    })
+
+//    h1.addEventListener("mouseout",function(){
+//        h1.textContent="Welcome to JS Class"
+//    })
+
+//     var boldedLis=document.getElementsByClassName("bolded");
+//     boldedLis[0].style.color="green";
+//     boldedLis[1].style.color="green";
+
+//     var p=document.querySelector("p");
+//     p.innerHTML="Happy New Year <b>2020</b>"
+
+//     var a=document.querySelector("a");
+//     a.setAttribute("href","http://www.google.com");
+//     a.textContent="Google";
+    
+//     var button=document.querySelector("button");
+//     button.addEventListener("click",function(){
+//         alert("Hello")
+//     })
+</script>
+
+<script>
+    $("#title").css("color","green");
+    $("div").css("background-color","purple");
+    $(".highlight").css("width","200px");
+    $("#third").css("border","1px solid orange");
+    $("div:first").css("color","pink");
 </script>
