@@ -54,8 +54,6 @@
 
             }
 
-
-
             if((color=="red") || (color=="green")){
 
             }
@@ -165,12 +163,16 @@
 
             var myLetters=["a","b","c"];
 
+            var name="varma"
+
+            name=null;
+            
+
             myLetters.forEach(function(value,position){
                 console.log(value + " at " + position)
             })
 
             //every, some, filter, map, reduce
-
             var movies=[
                 {
                     id:1,
@@ -274,6 +276,45 @@
         },[])
 
         console.log(theaters);
+
+
+
+        //Objects
+
+        var user={}
+
+        user.name="Varma";
+        user["age"]=46;
+
+        delete user["age"];
+
+        user["college name"]="JNTU"
+
+        var key="subjects";
+        user[key]="Math, Science";
+
+        
+
+        var teacher=Object.assign({},user);
+
+        var shop={
+            name:"XYZ",
+            address:{
+                city:"Hyderabad"
+            }
+        }
+
+
+        var myFullName="Varma Bhupatiraju"
+        console.log(myFullName.length)
+        var myUpperCasename=myFullName.toUpperCase();
+        //myFullName="Ram";
+
+        var myFirstInitial=myFullName[0];
+
+        var myFirstName="varma";
+
+
 
 
         </script>
@@ -507,5 +548,22 @@ ${state} ${postalCode}`
     </head>
     <body>
         <h1>Welcome to JS Class</h1>
+        <h1>Hello</h1>
+        <h1>Goodbye</h1>
+        <ul>
+            <li id="highlight">List Item 1</li>
+            <li class="bolded">List Item 2</li>
+            <li class="bolded">List Item 3</li>
+        </ul>
     </body>
 </html>
+
+<script>
+    var h1=document.querySelector("h1"); //SELECT
+    h1.style.color="red"; //MANIPULATE
+
+    var boldedLis=document.getElementsByClassName("bolded");
+    boldedLis[0].style.color="green";
+    boldedLis[1].style.color="green";
+
+</script>

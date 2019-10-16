@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Arrays</title>
+        <script>
+            
+            var subjectMarks=[32,45,60,90];
+
+            var isStudentPassedAll=subjectMarks.every(function(subjectMark){
+                return subjectMark>=35;
+            })
+
+            var isStudentFailedOnAnySubject=subjectMarks.some(function(subjectMark){
+                return subjectMark<=35;
+            })
+
+            var passedSubjectMarks=subjectMarks.filter(function(subjectMark){
+                return subjectMark>=35;
+            })
+
+            var totalMarks=subjectMarks.reduce(function(total,subjectMark){
+                return total+subjectMark;
+            })
+
+            var newMarkswithGrace=subjectMarks.map(function(subjectMark){
+                return subjectMark+10;
+            })
+        </script>
+    </head>
+</html>
