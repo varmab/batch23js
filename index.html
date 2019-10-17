@@ -613,4 +613,101 @@ ${state} ${postalCode}`
     $(".highlight").css("width","200px");
     $("#third").css("border","1px solid orange");
     $("div:first").css("color","pink");
+
+    $("button").on("click",function(){
+        $.ajax({
+            url: 'http://jsonplaceholder.typicode.com/posts/1',
+            success: function(data) {
+                $("p").text(data.title);
+            },
+            error: function() {
+                console.log('An error has occurred');
+            }
+        });
+    })
 </script>
+
+<script>
+
+    //Object Oriented Programming
+
+    // Class - blue print or model
+    //         Properties
+    //         Methods
+    //         constructor
+
+    // Object - instance of class created by new keyword
+
+    //OOP Charecterstics
+    // Encapsulation
+    // Inheritance
+    // Abstraction
+    // Polymorphism
+
+    //Constructor function
+    // function Person(name,age){
+    //     this.name=name;
+    //     this.age=age;
+    // }
+
+    // Person.prototype.showName=function(){
+    //     console.log(this.name)
+    // }
+
+    class Person{
+        constructor(name,age){
+            this.name=name;
+            this.age=age;
+        }
+
+        showName(){
+            console.log(this.name)
+        }
+    }
+
+    //Object
+    var newPerson=new Person("Varma",46);
+    newPerson.showName();
+
+    // function Student(name,age,school){
+    //     this.name=name;
+    //     this.age=age;
+    //     this.school=school;
+    // }
+
+    // Student.prototype=new Person();
+    // Student.prototype.showSchool=function(){
+    //     console.log(this.school)
+    // }
+
+    class Student extends Person{
+        constructor(name,age,school){
+            super(name,age);
+            this.school=school;
+        }
+
+        showSchool(){
+            console.log(this.school)
+        }
+    }
+
+    var newStudent=new Student("Ram",24,"JNTU");
+    newStudent.showSchool();
+    newPerson.showName();
+
+</script>
+
+<script>
+    //localStorage
+    localStorage.setItem("username","varmab");
+
+    // var currentUser=localStorage.getItem("username");
+
+    // localStorage.removeItem("username");
+    // localStorage.clear();
+
+    //sessionStorage
+
+
+</script>
+
